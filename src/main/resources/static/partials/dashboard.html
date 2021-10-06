@@ -1,0 +1,30 @@
+<md-content class="md-padding" layout="column" layout-fill>
+<div layout="column">
+	<div layout="column" layout-align="center center">
+		<div ng-if="!game.finish">Current Player :
+			{{game.currentPlayer}}</div>
+		<div ng-if="game.finish && game.winner != null">Winner :
+			{{game.winner}}</div>
+		<div ng-if="game.finish && game.winner == null">Draw</div>
+	</div>
+
+	<div layout="row" ng-repeat="row in game.board.cells"
+		layout-align="center center">
+		<md-button ng-repeat="cell in row track by $index"
+			style="width:100px; height:100px" class="md-raised"
+			ng-click="move($parent.$index, $index)"> {{cell}} </md-button>
+	</div>
+
+	<div layout="column" layout-align="center center">
+		<div layout="row">
+			<md-slider-container> <span
+				style="min-width: 100px">Board Size</span> <md-slider min="3"
+				max="11" step="2" ng-model="boardSize" class="md-primary"> </md-slider> <span
+				style="margin-left: 16px">{{boardSize}}x{{boardSize}}</span> </md-slider-container>
+
+		</div>
+		<md-button class="md-raised md-primary" ng-click="start()">Start
+		Game</md-button>
+	</div>
+</div>
+</md-content>

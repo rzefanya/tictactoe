@@ -1,0 +1,54 @@
+<md-dialog style="max-height:85%">
+	<form ng-cloak>
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>Anomaly in {{model.name}}</h2>
+			</div>
+		</md-toolbar>
+		<md-dialog-content layout="row">
+		<md-table-container>
+		  <table md-table>
+		    <tbody md-body>
+		      <tr md-row>
+		        <td md-cell>Date</td>
+		        <td md-cell>{{model.realDate}}</td>
+		      </tr>
+		      <tr md-row>
+		        <td md-cell>Device Id</td>
+		        <td md-cell>{{model.name}}</td>
+		      </tr>
+		      <tr md-row>
+		        <td md-cell>Strain Gauge Baja</td>
+		        <td md-cell>{{model.value.stg_baja}}</td>
+		      </tr>
+		      <tr md-row>
+		        <td md-cell>Strain Gauge Beton</td>
+		        <td md-cell>{{model.value.stg_beton}}</td>
+		      </tr>
+		      <tr md-row>
+		        <td md-cell>Displacement</td>
+		        <td md-cell>{{model.value.lvdt}}</td>
+		      </tr>
+		      <tr md-row>
+		        <td md-cell>Tilt</td>
+		        <td md-cell>{{model.value.tilt_x}}, {{model.value.tilt_y}}</td>
+		      </tr>
+		      <tr md-row>
+		        <td md-cell>Device Temperature</td>
+		        <td md-cell>{{model.value.PT100}}</td>
+		      </tr>
+		      <tr md-row>
+		        <td md-cell>Temperature</td>
+		        <td md-cell>{{model.value.temp}}</td>
+		      </tr>
+		      <tr md-row>
+		        <td md-cell>Humidity</td>
+		        <td md-cell>{{model.value.hum}}</td>
+		      </tr>
+		    </tbody>
+		  </table>
+		</md-table-container>
+		<nvd3 style="width:500px" options="model.option" data="latemodel.pca"></nvd3>
+		</md-dialog-content>
+	</form>
+</md-dialog>

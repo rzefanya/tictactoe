@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="REM">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<meta name="author" content="rzefanyaj">
+	<head>
+		<title>Tic Tac Toe</title>
+		<link rel="icon" type="img/ico" href="favicon.ico">
+		<link rel="stylesheet" href="libs/css/icon.css" />
+		<link rel="stylesheet" href="libs/css/css.css" />
+		<link rel="stylesheet" href="libs/css/angular-material.min.css" />
+		<link rel="stylesheet" href="libs/css/material-datetimepicker.min.css">
+		<link rel="stylesheet" href="libs/css/nv.d3.min.css">
+		<link rel="stylesheet" href="libs/css/md-data-table.min.css">
+		<link rel="stylesheet" href="libs/css/angular-material-sidemenu.css">
+		<link rel="stylesheet" href="libs/css/vis.min.css">
+		<link rel="stylesheet" href="css/css.css" />
+	</head>
+	<body ng-app="haApp" ng-controller="MainCtrl" ng-cloak class="demo" layout="row">
+		<div style="position: fixed; z-index: 11; left: 0; right: 0; top: 0" class="md-whiteframe-4dp" hide-gt-lg
+			ng-hide="hideMenu">
+	        <md-toolbar>
+	            <div class="md-toolbar-tools" style="padding-left: 24px; padding-right: 24px">
+	                <div>
+	                		Tic Tac Toe
+	                </div>
+	            </div>
+	        </md-toolbar>
+	    </div>
+	    <div style="position: fixed; z-index: 110; left: 0; right: 0; top: 0">
+			<div id="toastBounds"></div>
+	    </div>
+		<md-sidenav ng-hide="hideMenu"
+			class="md-sidenav-left grey-background"
+			md-component-id="left"
+			md-is-locked-open="$mdMedia('gt-lg')"
+			md-whiteframe="4"
+			layout="column">
+			
+			<div layout="row" layout-align="center center"
+				style="height:100px; margin:16px">
+				<div layout="column">
+					<div class="logo">
+						<span class="l l1"></span>	 
+						<span class="l l2"></span> 
+						<span class="l l3"></span> 
+						<span class="l l4"></span> 
+						<span class="l l5"></span>
+					</div>
+					<div class="logo">
+						<span class="l l1" style="top:0"></span>	 
+						<span class="l l2"></span> 
+						<span class="l l3" style="bottom:7px"></span> 
+						<span class="l l4" style="bottom:0"></span> 
+						<span class="l l5"></span>
+					</div>
+				</div>
+				<div style="font-size:xx-large" md-colors="{'color':'primary-600'}">
+					Tic Tac Toe
+				</div>
+			</div> 				
+
+			<md-divider></md-divider>
+			<md-divider></md-divider>
+			<md-content layout-padding layout="row" style="min-height:56px;">
+                <md-icon md-font-set="material-icons"
+                		style="font-size:48px; height:48px; width: 48px">account_circle</md-icon>
+                    
+                <div layout="column" style="font-size:large" flex="80" layout-align="center">
+                		<span>Welcome,</span> 
+                		<span>{{loggedin}}</span>
+                </div>
+			</md-content>
+			<md-divider></md-divider>
+			<md-divider></md-divider>
+			<md-content flex style="background-color:#efefef">
+				
+			</md-content>
+			<md-divider></md-divider>
+			<md-sidemenu>
+				<md-sidemenu-group>
+					<md-sidemenu-content md-icon="power_settings_new" ng-click="logout()" md-heading="Log Out"></md-sidemenu-content>
+				</md-sidemenu-group>
+			</md-sidemenu>
+		</md-sidenav>
+		<md-content flex layout="column">
+			<div style="height:64px" hide-gt-lg></div>
+			<div flex ng-view></div>
+		</md-content>
+		<script src="libs/js/jquery.min.js"></script>
+		<script src="libs/js/angular.min.js"></script>
+		<script src="libs/js/angular-animate.min.js"></script>
+		<script src="libs/js/angular-aria.min.js"></script>
+		<script src="libs/js/angular-messages.min.js"></script>
+		<script src="libs/js/angular-route.min.js"></script>
+		<script src="libs/js/angular-resource.min.js"></script>
+		<script src="libs/js/angular-sanitize.js"></script>
+		<script src="libs/js/angular-material.min.js"></script>
+		<script src="libs/js/d3.min.js"></script>
+		<script src="libs/js/nv.d3.min.js"></script>
+		<script src="libs/js/angular-nvd3.min.js"></script>
+		<script src="libs/js/moment.min.js"></script>
+		<script src="libs/js/angular-material-datetimepicker.min.js"></script>
+		<script src="libs/js/md-data-table.min.js"></script>
+		<script src="libs/js/perfect-scrollbar.jquery.min.js"></script>
+		<script src="libs/js/md5.js"></script>
+		<script src="libs/js/angular-material-sidemenu.js"></script>
+		<script src="libs/js/neovis.js"></script>
+		<script src="libs/js/vis.min.js"></script>
+		
+		<script src="js/app.js"></script>
+		<script src="js/util.js"></script>
+		<script src="js/controllers.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/services.js"></script>
+	</body>
+</html>
+
